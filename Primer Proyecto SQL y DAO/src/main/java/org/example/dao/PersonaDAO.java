@@ -2,15 +2,91 @@ package org.example.dao;
 
 import org.example.modelo.Persona;
 
-import javax.sql.RowSet;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class PersonaDAO extends Conexion implements IPersonaDAO {
+    protected Connection conn;
+
+    public PersonaDAO(Connection conn) {
+        this.conn = conn;
+    }
+
+    public void insertPersona(Persona persona) {
+        String query = "INSERT INTO Persona (idPersona, nombre, edad) VALUES (?, ?, ?)";
+        PreparedStatement ps = null;
+
+        try {
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, persona.getId()); // idPersona
+            ps.setString(2, persona.getNombre()); // nombre
+            ps.setInt(3, persona.getYear()); // edad
+            ps.executeUpdate();
+            System.out.println("Persona insertada exitosamente.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                conn.commit();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
-    public void insert(Object persona) throws SQLException {
+    public void delete(int id) {
+        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    }
+
+
+    @Override
+    public List<Persona> getPersonas() {
+        return null;
+    }
+
+
+    public Persona getPersonaByID(int id) {
+        String query = "SELECT p.nombre, p.edad, p.idDireccion " +
+                "FROM Persona p " +
+                "WHERE p.idPersona = ?";
+        Persona personaById = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id); // Establecer el parámetro en la consulta SQL
+            rs = ps.executeQuery();
+            if (rs.next()) { // Verificar si hay resultados
+                String nombre = rs.getString("nombre");
+                int edad = rs.getInt("edad");
+
+                // Crear una nueva instancia de Persona con los datos recuperados de la consulta
+                personaById = new Persona(id, nombre, edad);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                conn.commit();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return personaById;
+    }
+
+}
+
+    /*@Override
+        public void insert(Persona persona) throws SQLException {
         try{
            this.conectar();
 
@@ -51,7 +127,7 @@ public class PersonaDAO extends Conexion implements IPersonaDAO {
 
 
     @Override
-    public void update(Object persona) throws SQLException {
+    public void update(Persona persona) throws SQLException {
         try{
             this.conectar();
             PreparedStatement ps = this.con.prepareStatement("UPDATE person SET nombre = ? WHERE id = ?");
@@ -67,7 +143,7 @@ public class PersonaDAO extends Conexion implements IPersonaDAO {
     }
 
     @Override
-    public void delete(Object persona) throws SQLException {
+    public void delete(Persona persona) throws SQLException {
         try{
             this.conectar();
             PreparedStatement ps = this.con.prepareStatement("DELETE FROM person WHERE id = ?");
@@ -121,4 +197,6 @@ public class PersonaDAO extends Conexion implements IPersonaDAO {
     public Collection selectCustomers() {
         return List.of();
     }
-}
+    */
+
+
