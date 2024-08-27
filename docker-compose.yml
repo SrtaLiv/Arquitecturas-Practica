@@ -1,27 +1,30 @@
+version: '2.0'
+
 services:
-app_vet:
-build: primerproyecto
-mem_limit: 512m
-ports:
-- "8080:8080"
-environment:
-DB_URL: jdbc:mysql://primerproyecto:3306/primerproyecto?createDatabaseIfNotExist=true&serverTimezone=UTC
-DB_USER_NAME: root
-DB_PASSWORD: 1234
-restart: always
-depends_on:
-primerproyecto:
-condition: service_healthy
-primerproyecto:
-image: mysql:8.0.33
-ports:
-- "3307:3306"
-environment:
-MYSQL_ROOT_PASSWORD: 1234
-MYSQL_PASSWORD: 1234
-MYSQL_DATABASE: primerproyecto
-restart: always
-healthcheck:
-test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-timeout: 10s
-retries: 10
+  db:
+    image: mysql:8.0
+    container_name: arqui-mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: arquiDB
+    ports:
+      - "3306:3306"
+    volumes:
+      - arqui-db-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: arqui-phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  arqui-db-data:
