@@ -1,13 +1,19 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.example</groupId>
     <artifactId>Primer Proyecto SQL y DAO</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>primerproyectos</name>
+    <name>ejemploDAOyPatrones</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.9.2</junit.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
@@ -19,12 +25,14 @@
             <artifactId>derby</artifactId>
             <version>10.16.1.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
             <version>1.5</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -42,10 +50,12 @@
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!--  Default configuration for running with: mvn clean javafx:run  -->
+                        <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass> com.example.ejemplodaoypatrones/com.example.ejemplodaoypatrones.HelloApplication </mainClass>
+                            <mainClass>
+                                com.example.ejemplodaoypatrones/com.example.ejemplodaoypatrones.HelloApplication
+                            </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
