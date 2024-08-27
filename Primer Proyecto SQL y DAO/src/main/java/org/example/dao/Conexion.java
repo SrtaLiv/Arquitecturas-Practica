@@ -9,7 +9,7 @@ public class Conexion {
 
         protected Connection con;
         String driver = "com.mysql.cj.jdbc.Driver";
-        String uri = "jdbc:mysql://localhost:3307/arquidb";
+        String uri = "jdbc:mariadb://localhost:3308/arquidb";
 
 
         private final String USER = "root";

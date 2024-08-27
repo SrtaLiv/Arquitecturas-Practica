@@ -18,7 +18,7 @@ public class Main {
         }
 
         //conexion a la base de datos
-        String uri = "jdbc:mysql://localhost:3307/arquidb";
+        String uri = "jdbc:mysql://localhost:3308/arquidb";
 
         //Creamos conexion
         try {
@@ -27,7 +27,7 @@ public class Main {
 
             createTables(con); //Metodo para crear tablas dah
             addPerson(con, 1, "Olivia", 19);
-            addPerson(con, 2, "Santiago", 23);
+            addPerson(con, 2, "Carmen", 23);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

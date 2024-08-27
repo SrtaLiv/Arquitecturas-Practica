@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Sat Aug 24 21:47:35 ART 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0191-8700-b1f2-00000f60ad48 
-on database directory D:\University\SEMINARIOS\ANGULAR\crud angular spring\Primer Proyecto\MyDerbyDd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528 
-Loaded from file:/C:/Users/Liv/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
-java.vendor=Oracle Corporation
-java.runtime.version=22.0.2+9-70
-user.dir=D:\University\SEMINARIOS\ANGULAR\crud angular spring\Primer Proyecto
-os.name=Windows 10
+Mon Aug 26 15:24:46 ART 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0191-8fee-ed86-00000f11eed0 
+on database directory /home/liv/Documents/code/Arquitecturas-Web/Primer Proyecto/MyDerbyDd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
+Loaded from file:/home/liv/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
+java.vendor=Amazon.com Inc.
+java.runtime.version=20.0.2.1+10-FR
+user.dir=/home/liv/Documents/code/Arquitecturas-Web/Primer Proyecto
+os.name=Linux
 os.arch=amd64
-os.version=10.0
+os.version=6.1.0-23-amd64
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

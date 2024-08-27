@@ -15,7 +15,7 @@ public class Select {
             }
 
             //conexion a la base de datos
-            String uri = "jdbc:mysql://localhost:3307/arquidb";
+            String uri = "jdbc:mariadb://localhost:3308/arquidb";
 
             //Creamos conexion
             try {

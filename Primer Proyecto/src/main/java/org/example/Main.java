@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Main {
+
     public static void main(String[] args) {
         // Registrar driver haciendo una instancia
         String driver = "org.apache.derby.jdbc.EmbeddedDriver";
