@@ -1,13 +1,9 @@
-import model.Direccion;
 import model.Persona;
-import model.Socio;
-import model.Turno;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import java.sql.Timestamp;
 import java.util.List;
 
 public class Select {
