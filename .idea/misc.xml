@@ -5,10 +5,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/ejempl/pom.xml" />
+        <option value="$PROJECT_DIR$/Practico3/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Practico3/pom.xml" />
         <option value="$PROJECT_DIR$/ejempl/pom.xml" />
       </set>
     </option>

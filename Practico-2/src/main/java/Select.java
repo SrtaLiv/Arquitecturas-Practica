@@ -44,10 +44,10 @@ public class Select {
         }
 
         System.out.println("Recuperar todas las personas que viven en una ciudad predeterminada.");
-        String jpqlCiudad = "SELECT p FROM Persona p WHERE p.domicilio.ciudad = :culo";
+        String jpqlCiudad = "SELECT p FROM Persona p WHERE p.domicilio.ciudad = :ciudad";
         //:ciudad, estás diciendo "en este lugar de la consulta, colocaré el valor que asignaré después a través de código."
         Query ciudadQuery = em.createQuery(jpqlCiudad);
-        ciudadQuery.setParameter("culo", "Tandil"); // Filtrar por la ciudad "Tandil"
+        ciudadQuery.setParameter("ciudad", "Tandil"); // Filtrar por la ciudad "Tandil"
         List<Persona> resultList = ciudadQuery.getResultList();
         for (Persona persona : resultList) {
             System.out.println(persona.getNombre());
