@@ -18,10 +18,18 @@ public class PersonaController {
         return personaRepository.findAll();
     }
 
-    @GetMapping("personas/nombre/{nombre}")
+
+/*    @ApiOperation(value = "Get list of persons by name ", response = Iterable.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success|OK"),
+            @ApiResponse(code = 401, message = "not authorized!"),
+            @ApiResponse(code = 403, message = "forbidden!!!"),
+            @ApiResponse(code = 404, message = "not found!!!") }*/
+    @GetMapping("/BySurname/{surname}")
     public Iterable<Persona> getPersonasPorNombre(@PathVariable String nombre) {
         return personaRepository.findAllByNombre(nombre);
     }
+
 
     @PostMapping("/persona")
     public Persona addPersona(@RequestBody Persona persona) {

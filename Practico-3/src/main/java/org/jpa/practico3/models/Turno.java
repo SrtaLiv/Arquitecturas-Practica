@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 @Data
 public class Turno {
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

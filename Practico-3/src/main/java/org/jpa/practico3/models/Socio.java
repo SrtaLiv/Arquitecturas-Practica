@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Id;
 @Data //getters
 public class Socio {
 
+    @jakarta.persistence.Id
     @Id
     private int id;
 
@@ -29,6 +30,7 @@ public class Socio {
         this.persona = persona;
         this.tipo = tipo;
     }
+
 
 }
 

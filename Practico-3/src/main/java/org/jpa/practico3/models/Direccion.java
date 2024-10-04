@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Data
 public class Direccion {
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;

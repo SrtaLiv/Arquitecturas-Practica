@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 public class Persona {
 
+    @jakarta.persistence.Id
     @Id
     private int id;
 
@@ -27,11 +28,7 @@ public class Persona {
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "jugadores") //lista en turno
     private List<Turno> turnos;
 
-    public Persona() {
-        super();
-    }
-
-    public Persona(int id, String nombre, int edad, Direccion domicilio) {
+    public Persona(int id, String nombre, int edad) {
         super();
         this.id = id;
         this.nombre = nombre;
@@ -39,5 +36,8 @@ public class Persona {
         this.domicilio = domicilio;
     }
 
+    public Persona() {
+
+    }
 
 }
